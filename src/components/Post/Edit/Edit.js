@@ -13,14 +13,17 @@ export default class Edit extends Component {
     };
 
     this.updatePost = this.updatePost.bind( this );
+    // this.updatePostFn = this.updatePostFn.bind(this)
+    // this.hideEdit = this.hideEdit.bind(this)
   }
 
   updateText( value ) {
     this.setState({ text: value });
   }
 
-  updatePost() {
-
+  updatePost () {
+    this.props.updatePostFn(this.props.id, this.state.text)
+    this.props.hideEdit()
   }
 
   render() {
